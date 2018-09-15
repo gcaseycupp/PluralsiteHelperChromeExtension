@@ -1,0 +1,33 @@
+{
+	"manifest_version":2,
+	"name":"Pluralsight Helper",
+	"description":"Pluralsight helper",
+	"version":"1.0",
+
+	"page_action":{
+		"default_icon":"icon.png",
+		"default_popup":"popup.html",
+		"default_title":"pluralsigth helper"
+
+	},
+
+	"background":{
+		"scripts":["eventpage.js"],
+		"persistent":false
+
+	},
+
+	"content_scripts":[
+		{
+			"matches":["https://www.pluralsight.com/authors/*"],
+			"js":["pluralsight_cs.js", "jquery-3.3.1.js"]
+		}
+	],
+
+	"permissions":[
+		"tabs",
+		"https://pluralsight.com/*"
+	]
+
+
+}
